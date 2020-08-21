@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+      Stack<Integer> s= new Stack<>();
+        ListNode temp=head;
+        while(temp!=null)
+        {
+            s.push(temp.val);     //push all data in stack
+            temp=temp.next;
+        }
+        temp=head;
+        while(temp!=null)
+        {
+            int top=s.pop();            
+            if(top!=temp.val)         //pop out the top element in stack and compared with temp data 
+            {
+                return false;
+            }
+                temp=temp.next; 
+        }
+            return true;
+    }
+}
